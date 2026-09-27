@@ -1,0 +1,290 @@
+.page {
+  --ink: #243128;
+  --muted: #687368;
+  --paper: #f7f5ed;
+  --leaf: #c9d66a;
+
+  flex: 1;
+  width: 100%;
+  padding: clamp(3rem, 7vw, 5.5rem) 1.5rem 5rem;
+  color: var(--ink);
+  background-color: var(--paper);
+  background-image: radial-gradient(#d8d9c8 0.65px, transparent 0.65px);
+  background-size: 14px 14px;
+}
+
+.header,
+.recipeSection {
+  width: min(100%, 70rem);
+  margin-inline: auto;
+}
+
+.header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.eyebrow {
+  margin-bottom: 0.75rem;
+  color: #647632;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.header h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 500;
+  line-height: 1.08;
+}
+
+.intro {
+  margin-top: 0.85rem;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.searchArea {
+  width: min(100%, 45rem);
+  margin: 0 auto 2.25rem;
+}
+
+.searchLabel {
+  display: block;
+  margin-bottom: 0.55rem;
+  color: var(--ink);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.searchBox {
+  display: flex;
+  min-height: 3.5rem;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0 0.9rem 0 1rem;
+  border: 1px solid #cfd2c4;
+  background: #fffef9;
+  box-shadow: 0 8px 22px rgb(36 49 40 / 7%);
+}
+
+.searchBox:focus-within {
+  border-color: #647632;
+  outline: 2px solid rgb(100 118 50 / 22%);
+  outline-offset: 2px;
+}
+
+.searchIcon {
+  position: relative;
+  flex: 0 0 1rem;
+  width: 1rem;
+  height: 1rem;
+  border: 1.7px solid #647632;
+  border-radius: 50%;
+}
+
+.searchIcon::after {
+  position: absolute;
+  right: -0.35rem;
+  bottom: -0.22rem;
+  width: 0.45rem;
+  height: 1.7px;
+  transform: rotate(45deg);
+  background: #647632;
+  content: "";
+}
+
+.searchBox input {
+  width: 100%;
+  min-width: 0;
+  min-height: 3.25rem;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.95rem;
+}
+
+.searchBox input::placeholder {
+  color: #899084;
+}
+
+.searchBox input::-webkit-search-cancel-button {
+  cursor: pointer;
+}
+
+.clearButton {
+  padding: 0.4rem 0.2rem;
+  border: 0;
+  background: transparent;
+  color: #647632;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.clearButton:focus-visible {
+  outline: 2px solid #647632;
+  outline-offset: 2px;
+}
+
+.resultCount {
+  margin-top: 0.65rem;
+  color: var(--muted);
+  font-size: 0.84rem;
+  text-align: right;
+}
+
+.recipeGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.35rem;
+}
+
+.recipeCard {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #d8d9ca;
+  background: #fffef9;
+  color: inherit;
+  text-decoration: none;
+  box-shadow: 0 8px 22px rgb(36 49 40 / 6%);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.recipeCard:hover,
+.recipeCard:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgb(36 49 40 / 12%);
+}
+
+.recipeCard:focus-visible {
+  outline: 2px solid #647632;
+  outline-offset: 3px;
+}
+
+.recipeImage {
+  position: relative;
+  aspect-ratio: 1.55;
+  overflow: hidden;
+  background-color: #d8ddc7;
+  background-size: cover;
+}
+
+.imageAppam {
+  background-image: radial-gradient(ellipse at 50% 55%, #faf2db 0 19%, #d5b87a 20% 24%, transparent 25%), radial-gradient(ellipse at 48% 52%, #fcf8eb 0 31%, transparent 32%), linear-gradient(130deg, #7e8c59, #d7bd8c 54%, #ece1c4);
+}
+
+.imageFish {
+  background-image: radial-gradient(ellipse at 55% 53%, #b94d32 0 18%, #e5a451 19% 24%, transparent 25%), radial-gradient(ellipse at 52% 50%, #e8d4a7 0 32%, transparent 33%), linear-gradient(130deg, #455e3a, #9a9d59 52%, #d4b276);
+}
+
+.imageBiryani {
+  background-image: radial-gradient(ellipse at 48% 55%, #f2d495 0 23%, #b96435 24% 29%, transparent 30%), radial-gradient(ellipse at 52% 50%, #f8edce 0 35%, transparent 36%), linear-gradient(130deg, #4e603a, #b98b4d 55%, #d9c18c);
+}
+
+.imagePuttu {
+  background-image: radial-gradient(ellipse at 42% 53%, #f5e6c7 0 15%, #bd9a68 16% 20%, transparent 21%), radial-gradient(ellipse at 62% 59%, #584331 0 17%, #a87949 18% 22%, transparent 23%), linear-gradient(135deg, #d9ccaa, #8b9a67 55%, #ece1c8);
+}
+
+.imageAvial {
+  background-image: radial-gradient(ellipse at 50% 54%, #9da756 0 8%, transparent 9%), radial-gradient(ellipse at 39% 48%, #d17a43 0 8%, transparent 9%), radial-gradient(ellipse at 60% 48%, #e6d295 0 9%, transparent 10%), radial-gradient(ellipse at 50% 52%, #f3e5bd 0 31%, transparent 32%), linear-gradient(135deg, #778553, #d5c59c 55%, #e8dfc8);
+}
+
+.imageChips {
+  background-image: radial-gradient(ellipse at 37% 43%, #e5ad48 0 12%, transparent 13%), radial-gradient(ellipse at 59% 53%, #d48b34 0 13%, transparent 14%), radial-gradient(ellipse at 48% 67%, #efbf5c 0 12%, transparent 13%), radial-gradient(ellipse at 54% 45%, #f0dba9 0 37%, transparent 38%), linear-gradient(130deg, #71824e, #b8a16a 54%, #e4d8b9);
+}
+
+.imagePayasam {
+  background-image: radial-gradient(ellipse at 50% 52%, #f3e5bd 0 24%, #c99650 25% 30%, transparent 31%), radial-gradient(ellipse at 52% 50%, #fff5dc 0 37%, transparent 38%), linear-gradient(130deg, #71563c, #d3b276 56%, #ece0c1);
+}
+
+.imageCaption {
+  position: absolute;
+  right: 0.7rem;
+  bottom: 0.7rem;
+  padding: 0.35rem 0.55rem;
+  background: rgb(36 49 40 / 78%);
+  color: #fffdf5;
+  font-size: 0.72rem;
+}
+
+.cardBody {
+  padding: 1rem 1.05rem 1.2rem;
+}
+
+.cardMeta {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  color: #647632;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.cardBody h2 {
+  margin-top: 0.65rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.cardBody > p {
+  margin-top: 0.55rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.emptyState {
+  padding: 3rem 1.25rem;
+  border: 1px dashed #bfc5af;
+  color: var(--muted);
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .recipeGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .page {
+    padding: 3rem 1rem 3.5rem;
+  }
+
+  .header {
+    margin-bottom: 1.6rem;
+  }
+
+  .intro {
+    font-size: 0.98rem;
+  }
+
+  .searchArea {
+    margin-bottom: 1.6rem;
+  }
+
+  .recipeGrid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .recipeImage {
+    aspect-ratio: 1.8;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .recipeCard {
+    transition: none;
+  }
+}
